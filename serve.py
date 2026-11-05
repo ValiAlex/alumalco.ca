@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Local preview with clean URLs (/en/projects -> en/projects.html), like the production host.
+"""Local preview with clean URLs (/en/projects -> en/projects/index.html), like the production host.
 Usage: python3 serve.py [port]   then open http://localhost:8000/"""
 import os
 import sys
@@ -16,8 +16,9 @@ class Handler(SimpleHTTPRequestHandler):
     def translate_path(self, path):
         p = super().translate_path(path)
         clean = urlsplit(path).path
-        if not os.path.isfile(p) and not clean.endswith('/') and os.path.isfile(p + '.html'):
-            return p + '.html'
+        idx = os.path.join(p, 'index.html')
+        if os.path.isdir(p) and os.path.isfile(idx):
+            return idx  # serve /en/about from en/about/index.html without a redirect, like production
         return p
 
 

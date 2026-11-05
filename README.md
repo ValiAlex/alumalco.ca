@@ -10,7 +10,7 @@ Bilingual (EN / FR): every page has its own crawlable URL per language, followin
 src/site.html         SOURCE — markup for every page (EN text inline, FR text in data-fr="…")
 build.py              Generator: src/site.html -> en/, fr/, index.html, sitemap.xml, robots.txt
 serve.py              Local preview server with clean URLs
-en/  fr/              GENERATED pages (one .html per URL) — do not edit by hand
+en/  fr/              GENERATED pages (one folder + index.html per URL) — do not edit by hand
 index.html            GENERATED "/" fallback: language redirect + old #hash links
 sitemap.xml           GENERATED — every EN + FR URL with hreflang alternates
 robots.txt            GENERATED — allows everything, points to the sitemap
@@ -18,7 +18,6 @@ js/legacy-routes.js   GENERATED — maps old #hash URLs (e.g. /#al750) to the ne
 js/main.js            Site scripts (loaded with `defer` on every page)
 css/style.css         All styles
 images/  catalogues/  Photography/renders/logos/videos, downloadable PDFs (EN + FR)
-_redirects            Same for Netlify / Cloudflare Pages
 ```
 
 ## Editing workflow
@@ -50,9 +49,9 @@ _redirects            Same for Netlify / Cloudflare Pages
 | Entrance SD770 | `/en/entrance-doors` | `/fr/portes-d-entree` |
 | Projects (19) | `/en/projects/<name>-residence` | `/fr/projets/residence-<name>` |
 
-Files are written as `en/<slug>.html` and must be served without the extension
-(`/en/<slug>`); on Netlify enable "Pretty URLs".
-`/` sends French browsers to `/fr/` (302) and everyone else to `/en/` (301).
+Each page is written as `en/<slug>/index.html`, which the host (DigitalOcean App Platform)
+serves at `/en/<slug>` with no rewrite rules needed. The root `index.html` sends visitors to
+`/fr/` or `/en/` by browser language and maps old `#hash` links to the new URLs.
 
 ## What each page contains
 
