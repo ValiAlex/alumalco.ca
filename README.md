@@ -8,6 +8,10 @@ Bilingual (EN / FR): every page has its own crawlable URL per language, followin
 
 ```
 src/site.html         SOURCE — markup for every page (EN text inline, FR text in data-fr="…")
+src/privacy-policy-en.html / -fr.html
+                      SOURCE — Privacy Policy content (the <main class="privacy-page"> block is used)
+src/footer-and-form-snippets.html
+                      Reference: privacy footer link + form consent lines (already integrated)
 build.py              Generator: src/site.html -> en/, fr/, index.html, sitemap.xml, robots.txt
 serve.py              Local preview server with clean URLs
 en/  fr/              GENERATED pages (one folder + index.html per URL) — do not edit by hand
@@ -17,6 +21,7 @@ robots.txt            GENERATED — allows everything, points to the sitemap
 js/legacy-routes.js   GENERATED — maps old #hash URLs (e.g. /#al750) to the new URLs
 js/main.js            Site scripts (loaded with `defer` on every page)
 css/style.css         All styles
+css/privacy-policy.css  Privacy Policy page styles (loaded only on those two pages)
 images/  catalogues/  Photography/renders/logos/videos, downloadable PDFs (EN + FR)
 ```
 
@@ -41,6 +46,7 @@ images/  catalogues/  Photography/renders/logos/videos, downloadable PDFs (EN + 
 | Careers | `/en/careers` | `/fr/carrieres` |
 | Contact & quote | `/en/contact` | `/fr/contact` |
 | Thank-you (noindex) | `/en/thank-you` | `/fr/merci` |
+| Privacy Policy | `/en/privacy-policy` | `/fr/politique-de-confidentialite` |
 | Tilt & Turn AL750 | `/en/tilt-and-turn-windows` | `/fr/fenetres-oscillo-battantes` |
 | Casement AL480 | `/en/casement-windows` | `/fr/fenetres-a-battant` |
 | Lift & Slide SL550 | `/en/lift-and-slide-doors` | `/fr/portes-levantes-coulissantes` |

@@ -1,0 +1,44 @@
+/* Alumalco Privacy Policy page styles (EN + FR pages).
+   Scoped to <main class="privacy-page">. Uses the site's colour/font variables when present, with fallbacks.
+   The sticky "On this page" list sits 100px from the top: change top:100px and scroll-margin-top:100px if the site header is taller. */
+.privacy-page .pp-head{background:var(--paper-2,#F3EFE6);padding:clamp(48px,8vh,96px) var(--gut,clamp(20px,5vw,90px)) clamp(40px,6vh,64px);border-bottom:1px solid var(--line,rgba(23,21,15,.14))}
+.privacy-page .pp-crumb{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--pewter,#9D998C)}
+.privacy-page .pp-crumb a{color:inherit;text-decoration:none}
+.privacy-page .pp-crumb a:hover{color:var(--ink,#17150F)}
+.privacy-page .pp-head h1{font-family:var(--serif,"Open Sans",-apple-system,Helvetica,Arial,sans-serif);font-weight:300;font-size:clamp(38px,5.6vw,76px);line-height:1.04;letter-spacing:-.01em;color:var(--ink,#17150F);margin:22px 0 22px;max-width:none}
+.privacy-page .pp-lead{max-width:70ch;font-size:clamp(16px,1.3vw,19px);line-height:1.65;color:var(--ink-soft,#3A372E)}
+.privacy-page .pp-lead + .pp-lead{margin-top:14px}
+.privacy-page .pp-updated{margin-top:22px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--pewter,#9D998C)}
+.privacy-page .pp-body{display:grid;grid-template-columns:minmax(200px,250px) minmax(0,1fr);gap:clamp(32px,6vw,96px);padding:clamp(48px,7vh,90px) var(--gut,clamp(20px,5vw,90px)) clamp(70px,10vh,120px);align-items:start}
+.privacy-page .pp-toc{position:sticky;top:100px;border-left:1px solid var(--line,rgba(23,21,15,.14));padding-left:20px}
+.privacy-page .pp-toc .pp-toc-t{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--pewter,#9D998C);margin-bottom:14px}
+.privacy-page .pp-toc ol{list-style:none;margin:0;padding:0}
+.privacy-page .pp-toc li{margin:0 0 9px}
+.privacy-page .pp-toc a{font-size:14px;line-height:1.4;color:var(--ink-soft,#3A372E);text-decoration:none}
+.privacy-page .pp-toc a:hover{color:var(--ink,#17150F);text-decoration:underline;text-underline-offset:3px}
+.privacy-page .pp-content{max-width:760px}
+.privacy-page .pp-content h2{font-family:var(--serif,"Open Sans",-apple-system,Helvetica,Arial,sans-serif);font-weight:400;font-size:clamp(22px,2.2vw,30px);line-height:1.25;letter-spacing:-.005em;color:var(--ink,#17150F);margin:clamp(44px,6vh,60px) 0 14px;scroll-margin-top:100px;max-width:none}
+.privacy-page .pp-content h2:first-child{margin-top:0}
+.privacy-page .pp-content h3{font-size:15px;font-weight:600;letter-spacing:0;color:var(--ink,#17150F);margin:24px 0 8px}
+.privacy-page .pp-content p,.privacy-page .pp-content li{font-size:16px;line-height:1.75;color:var(--ink-soft,#3A372E)}
+.privacy-page .pp-content p + p{margin-top:14px}
+.privacy-page .pp-content ul{list-style:disc;margin:10px 0 0;padding-left:1.25em}
+.privacy-page .pp-content li + li{margin-top:6px}
+.privacy-page .pp-content ul + p{margin-top:16px}
+.privacy-page .pp-content a{color:var(--ink,#17150F);text-decoration:underline;text-underline-offset:3px}
+.privacy-page .pp-box{margin-top:16px;padding:20px 22px;border:1px solid var(--line,rgba(23,21,15,.14));background:var(--paper-2,#F3EFE6)}
+.privacy-page .pp-box p{margin:0}
+.privacy-page .pp-box p + p{margin-top:6px}
+.privacy-page .pp-cta{margin-top:clamp(40px,6vh,56px);padding-top:28px;border-top:1px solid var(--line,rgba(23,21,15,.14))}
+.privacy-page .pp-cta .pp-btn{margin-top:16px}
+@media(max-width:900px){
+  .privacy-page .pp-body{grid-template-columns:1fr}
+  .privacy-page .pp-toc{position:static;border-left:0;padding:18px 20px;background:var(--paper-2,#F3EFE6);border:1px solid var(--line,rgba(23,21,15,.14))}
+}
+
+/* Request a quote button at the end of the policy */
+.privacy-page .pp-btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;background:var(--ink,#17150F);color:#fff;border:1px solid var(--ink,#17150F);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;transition:background .3s,color .3s}
+.privacy-page .pp-btn:hover{background:transparent;color:var(--ink,#17150F)}
+.privacy-page .pp-btn .arw{font-size:15px;letter-spacing:0}
+.privacy-page *{box-sizing:border-box}
+.privacy-page h1,.privacy-page h2,.privacy-page h3,.privacy-page p,.privacy-page ul,.privacy-page ol{margin-left:0;margin-right:0}

@@ -871,3 +871,8 @@ html.intro-lock,body.intro-lock{overflow:hidden!important;height:100%}
 #pdfov.use-frame .pv-pages{display:none}
 #pdfov.use-frame iframe{display:block}
 @media(max-width:560px){#pdfov .pv-title{font-size:12px}#pdfov .pv-dl{padding:7px 11px;letter-spacing:.08em}}
+
+/* Privacy consent line under form submit buttons */
+.form-privacy{margin-top:16px;font-size:12.5px;line-height:1.55;color:#9D998C;max-width:60ch}
+.form-privacy a{color:#3A372E;text-decoration:underline;text-underline-offset:2px}
+.form-privacy a:hover{color:#17150F}
